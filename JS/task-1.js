@@ -9,14 +9,12 @@
 // Категория: Животные
 // Количество элементов: 4
 
-// const categoriesEl = document.querySelector(ul);
-// console.log(categoriesEl)
+const itemEl = document.querySelectorAll("li.item");
+console.log(`В списке ${itemEl.length} категории.`);
 
-const categoriesEl = document.getElementById("categories");
-console.log(categoriesEl);
-console.log(`В списке ${categoriesEl.childElementCount} категории`);
-
-const itemEl = document.querySelectorAll('.item');
-console.log(itemEl);
-const searchEl = itemEl.querySelectorAll('.item');
-console.log(searchEl);
+itemEl.forEach((list) =>
+  console.log(
+    `Категория: ${list.firstElementChild.textContent} 
+    Количество элементов: ${list.lastElementChild.children.length}`
+  )
+);
